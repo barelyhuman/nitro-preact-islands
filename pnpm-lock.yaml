@@ -16,9 +16,6 @@ importers:
       '@babel/plugin-transform-react-jsx':
         specifier: ^7.23.4
         version: 7.23.4(@babel/core@7.24.3)
-      '@barelyhuman/preact-island-plugins':
-        specifier: ^0.1.5-beta.1
-        version: 0.1.5-beta.1(@rollup/plugin-babel@6.0.4)(@rollup/plugin-node-resolve@15.2.3)(@rollup/plugin-typescript@11.1.6)(preact@10.20.0)(typescript@5.4.3)
       '@dumbjs/preland':
         specifier: 0.0.0-beta.9
         version: 0.0.0-beta.9(astring@1.8.6)
@@ -299,43 +296,6 @@ packages:
     dependencies:
       astring: 1.8.6
       xtend: 4.0.2
-    dev: false
-
-  /@barelyhuman/preact-island-plugins@0.1.5-beta.1(@rollup/plugin-babel@6.0.4)(@rollup/plugin-node-resolve@15.2.3)(@rollup/plugin-typescript@11.1.6)(preact@10.20.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-f4Se6JLO9Iu5d51JxP8WujM0hyHe9X54gaL3qDQdWg7nhcrZOMkYPqTOi10cIRxQomnMV8tbEZqQYo6bdDIEpg==}
-    peerDependencies:
-      '@rollup/plugin-babel': ^6.0.3
-      '@rollup/plugin-node-resolve': ^15.1.0
-      '@rollup/plugin-typescript': '>=11.1.2'
-      esbuild: ^0.18.11
-      preact: ^10.15.1
-      rollup: ^3.26.2
-      typescript: ^5.1.6
-    peerDependenciesMeta:
-      esbuild:
-        optional: true
-      rollup:
-        optional: true
-    dependencies:
-      '@barelyhuman/astring-jsx': 2.0.1(astring@1.8.6)
-      '@rollup/plugin-babel': 6.0.4(@babel/core@7.24.3)
-      '@rollup/plugin-node-resolve': 15.2.3(rollup@4.13.0)
-      '@rollup/plugin-typescript': 11.1.6(typescript@5.4.3)
-      acorn: 8.11.3
-      acorn-class-fields: 1.0.0(acorn@8.11.3)
-      acorn-import-assertions: 1.9.0(acorn@8.11.3)
-      acorn-jsx: 5.3.2(acorn@8.11.3)
-      acorn-jsx-walk: 2.0.0
-      acorn-logical-assignment: 0.1.4(acorn@8.11.3)
-      acorn-loose: 8.4.0
-      acorn-private-class-elements: 1.0.0(acorn@8.11.3)
-      acorn-private-methods: 1.0.0(acorn@8.11.3)
-      acorn-static-class-features: 1.0.0(acorn@8.11.3)
-      acorn-walk: 8.3.2
-      astring: 1.8.6
-      defu: 6.1.4
-      preact: 10.20.0
-      typescript: 5.4.3
     dev: false
 
   /@cloudflare/kv-asset-handler@0.3.1:
@@ -894,24 +854,6 @@ packages:
       smob: 1.4.1
       terser: 5.29.2
 
-  /@rollup/plugin-typescript@11.1.6(typescript@5.4.3):
-    resolution: {integrity: sha512-R92yOmIACgYdJ7dJ97p4K69I8gg6IEHt8M7dUBxN3W6nrO8uUxX5ixl0yU/N3aZTi8WhPuICvOHXQvF6FaykAA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0||^3.0.0||^4.0.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-      tslib:
-        optional: true
-    dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
-      resolve: 1.22.8
-      typescript: 5.4.3
-    dev: false
-
   /@rollup/pluginutils@4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
@@ -1111,23 +1053,6 @@ packages:
       acorn: 8.11.3
     dev: false
 
-  /acorn-logical-assignment@0.1.4(acorn@8.11.3):
-    resolution: {integrity: sha512-SeqO1iRtc/NeXo4bTkyK0hN0CIoKi/FQMN1NqhTr5UxqEn4p2wKNTZl+xzvU7i2u/k0f66YR7pNPi2ckPwYubg==}
-    engines: {node: '>=4.8.2'}
-    deprecated: acorn>=7.4 supports logical assignments
-    peerDependencies:
-      acorn: ^6 || ^7 || ^8
-    dependencies:
-      acorn: 8.11.3
-    dev: false
-
-  /acorn-loose@8.4.0:
-    resolution: {integrity: sha512-M0EUka6rb+QC4l9Z3T0nJEzNOO7JcoJlYMrBlyBCiFSXRyxjLKayd4TbQs2FDRWQU1h9FR7QVNHt+PEaoNL5rQ==}
-    engines: {node: '>=0.4.0'}
-    dependencies:
-      acorn: 8.11.3
-    dev: false
-
   /acorn-private-class-elements@1.0.0(acorn@8.11.3):
     resolution: {integrity: sha512-zYNcZtxKgVCg1brS39BEou86mIao1EV7eeREG+6WMwKbuYTeivRRs6S2XdWnboRde6G9wKh2w+WBydEyJsJ6mg==}
     engines: {node: '>=4.8.2'}
@@ -1135,16 +1060,6 @@ packages:
       acorn: ^6.1.0 || ^7 || ^8
     dependencies:
       acorn: 8.11.3
-    dev: false
-
-  /acorn-private-methods@1.0.0(acorn@8.11.3):
-    resolution: {integrity: sha512-Jou2L3nfwfPpFdmmHObI3yUpVPM1bPohTUAZCyVDw5Efyn9LSS6E36neRLCRfIr8QjskAfdxRdABOrvP4c/gwQ==}
-    engines: {node: '>=4.8.2'}
-    peerDependencies:
-      acorn: ^6 || ^7 || ^8
-    dependencies:
-      acorn: 8.11.3
-      acorn-private-class-elements: 1.0.0(acorn@8.11.3)
     dev: false
 
   /acorn-static-class-features@1.0.0(acorn@8.11.3):
@@ -3043,12 +2958,6 @@ packages:
   /type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
-
-  /typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-    dev: false
 
   /ufo@1.5.3:
     resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}

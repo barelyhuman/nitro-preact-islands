@@ -27,7 +27,7 @@ export function withIslands(config) {
   config.plugins = config.plugins || [];
   const dir = dirname(fileURLToPath(import.meta.url));
 
-  config.plugins.push(join(dir, "plugin"));
+  config.plugins.push(join(dir, "plugin.js"));
 
   config.externals = [].concat(
     config.externals || [],
