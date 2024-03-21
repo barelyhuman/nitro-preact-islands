@@ -1,7 +1,8 @@
-import preactIslandPlugins from "@barelyhuman/preact-island-plugins/rollup";
-import babel from "@rollup/plugin-babel";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { rollupPlugin } from "./islands/plugin.js";
+import babel from "@rollup/plugin-babel";
+import transformJSX from "@babel/plugin-transform-react-jsx";
 
 /**
  * @param {import("nitropack").NitroConfig} config
@@ -10,7 +11,7 @@ export function withIslands(config) {
   config.publicAssets = config.publicAssets || [];
 
   config.publicAssets.push({
-    dir: ".islands",
+    dir: "./.islands",
     baseURL: ".islands",
   });
 
@@ -28,22 +29,22 @@ export function withIslands(config) {
 
   config.plugins.push(join(dir, "plugin"));
 
+  config.externals = [].concat(
+    config.externals || [],
+    "preact",
+    "preact/hooks"
+  );
+
   config.rollupConfig = config.rollupConfig || {};
   config.rollupConfig.plugins = config.rollupConfig.plugins || [];
 
   config.rollupConfig.plugins = config.rollupConfig.plugins.concat(
-    preactIslandPlugins({
-      rootDir: ".",
-      baseURL: "/.islands",
-      client: {
-        output: ".islands",
-      },
-    }),
+    rollupPlugin(),
     babel({
       babelHelpers: "bundled",
       plugins: [
         [
-          "@babel/plugin-transform-react-jsx",
+          transformJSX,
           {
             runtime: "automatic",
             importSource: "preact",

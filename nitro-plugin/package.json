@@ -1,0 +1,29 @@
+{
+  "name": "nitro-preact-islands",
+  "version": "0.0.2",
+  "description": "UnJS Nitro plugin to render preact islands",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./plugin": "./src/plugin.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@babel/core": "^7.24.1",
+    "@babel/plugin-transform-react-jsx": "^7.23.4",
+    "@barelyhuman/preact-island-plugins": "^0.1.5-beta.1",
+    "@dumbjs/preland": "0.0.0-beta.9",
+    "@rollup/plugin-babel": "^6.0.4",
+    "preact-render-to-string": "^6.4.0",
+    "resolve-package-path": "^4.0.3",
+    "tiny-glob": "^0.2.9"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "nitropack": ">=2",
+    "preact": "^10.19.7"
+  }
+}
