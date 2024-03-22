@@ -17,8 +17,8 @@ importers:
         specifier: ^7.23.4
         version: 7.23.4(@babel/core@7.24.3)
       '@dumbjs/preland':
-        specifier: 0.0.0-beta.9
-        version: 0.0.0-beta.9(astring@1.8.6)
+        specifier: 0.0.0-beta.10
+        version: 0.0.0-beta.10(astring@1.8.6)
       '@rollup/plugin-babel':
         specifier: ^6.0.4
         version: 6.0.4(@babel/core@7.24.3)
@@ -307,8 +307,8 @@ packages:
     dependencies:
       mime: 3.0.0
 
-  /@dumbjs/preland@0.0.0-beta.9(astring@1.8.6):
-    resolution: {integrity: sha512-aQ6PP6+cF+pSwb51Zt61ifKZmBC32YG8c09Y6mrB2g/9OcESXHC/7EGcTB5NSML3q3Ic9a56C1edtkIz94FMaA==}
+  /@dumbjs/preland@0.0.0-beta.10(astring@1.8.6):
+    resolution: {integrity: sha512-oNZ6GRa3+ZX6QRdVYNJKeEK34aUsHZu352+KHdOqICRzGybbr4+tn/PznhRvacdriQV2zaq4jPQGZPIw0143fA==}
     dependencies:
       '@barelyhuman/astring-jsx': 2.0.1(astring@1.8.6)
       acorn: 8.11.3
