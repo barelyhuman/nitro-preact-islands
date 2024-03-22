@@ -10,7 +10,7 @@ import { addImportToAST, codeFromAST } from "@dumbjs/preland/ast";
 import babel from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import jsx from "acorn-jsx";
-import fs, { existsSync } from "node:fs";
+import fs, { existsSync, mkdirSync } from "node:fs";
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import resolvePackagePath from "resolve-package-path";
 
@@ -22,6 +22,11 @@ import { rollup } from "rollup";
  */
 export function rollupPlugin(options) {
   let islandsDir = join(".islands");
+
+  mkdirSync(islandsDir, {
+    recursive: true,
+  });
+
   return {
     name: "nitro-preland",
     enforce: "pre",
@@ -76,7 +81,7 @@ export function rollupPlugin(options) {
 
       let serverCode = codeFromAST(islands[0].ast);
 
-      await mkdir(join(".islands"), {
+      await mkdir(islandsDir, {
         recursive: true,
       });
 
