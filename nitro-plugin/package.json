@@ -1,6 +1,6 @@
 {
   "name": "nitro-preact-islands",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "UnJS Nitro plugin to render preact islands",
   "type": "module",
   "exports": {
