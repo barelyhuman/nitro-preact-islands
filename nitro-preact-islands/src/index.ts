@@ -40,6 +40,12 @@ export default defineNitroModule({
   setup(nitro) {
     const islandOptions = defu(nitro.options.islands ?? {}, defaultOptions);
 
+    // Enable mapping jsx to preact
+    nitro.options.esbuild ||= {};
+    nitro.options.esbuild.options ||= {};
+    nitro.options.esbuild.options.jsx = "automatic";
+    nitro.options.esbuild.options.jsxImportSource = "preact";
+
     nitro.options.publicAssets ||= [];
     const islandsAssets = {
       baseURL: join("/", islandOptions.outDir, "/"),

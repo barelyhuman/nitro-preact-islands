@@ -1,17 +1,5 @@
 export default defineNitroConfig({
   modules: ["nitro-preact-islands"],
-  esbuild: {
-    options: {
-      jsx: "automatic",
-      jsxImportSource: "preact",
-    },
-  },
-  rollupConfig: {
-    jsx: {
-      mode: "automatic",
-      importSource: "preact",
-    },
-  },
   imports: {
     imports: [
       {
