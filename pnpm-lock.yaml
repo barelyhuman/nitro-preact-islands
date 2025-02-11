@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  nitro-plugin:
+  nitro-preact-islands:
     dependencies:
       '@dumbjs/preland':
         specifier: dumbjs/preland
@@ -50,7 +50,7 @@ importers:
     devDependencies:
       nitro-preact-islands:
         specifier: workspace:*
-        version: link:../nitro-plugin
+        version: link:../nitro-preact-islands
       nitropack:
         specifier: ^2.10.4
         version: 2.10.4(typescript@5.7.3)
