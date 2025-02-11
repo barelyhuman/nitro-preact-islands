@@ -39,7 +39,6 @@ export default defineNitroModule({
   name: "nitro-modules-island",
   setup(nitro) {
     const islandOptions = defu(nitro.options.islands ?? {}, defaultOptions);
-
     // Enable mapping jsx to preact
     nitro.options.esbuild ||= {};
     nitro.options.esbuild.options ||= {};
@@ -57,7 +56,6 @@ export default defineNitroModule({
     // @ts-expect-error fix types
     nitro.options.rollupConfig ||= {
       plugins: [],
-      external: [],
     };
 
     nitro.options.rollupConfig.plugins ||= [];
@@ -99,24 +97,21 @@ function islandRollupPlugin(options: IslandOptions) {
           recursive: true,
         });
         const baseDist = join(presetOptions.output.publicDir, ".islands");
-        await files.reduce((acc, item) => {
-          return acc.then(async () => {
+        await Promise.all(
+          files.map(async (item) => {
             const src = join(islandsDir, item);
             const dst = join(baseDist, item);
             await fs.promises.mkdir(dirname(dst), { recursive: true });
-            if (!existsSync(dst)) {
-              return fs.promises.cp(src, dst);
-            }
-            return false;
-          });
-        }, Promise.resolve());
+            await fs.promises.cp(src, dst);
+          })
+        );
       } catch (err) {
         console.error(err);
       }
     },
     async transform(_, id) {
       if (id.includes("virtual:")) return;
-      // ignore files that don't exist
+      // ignore files that don't exist or are part of `node_modules`
       if (!existsSync(id)) return;
       if (id.includes("node_modules")) return;
 
@@ -160,24 +155,25 @@ function islandRollupPlugin(options: IslandOptions) {
           serverCode = serverCode.replace(
             `<~{${island.id}}~>`,
             "/" +
-              join(
-                islandsDir,
-                island.id + "-" + islandHashes[island.id] + ".js"
-              )
+            join(
+              islandsDir,
+              island.id + "-" + islandHashes[island.id] + ".js"
+            )
           );
 
           await writeFile(join(islandsDir, island.id + ".js"), clientTemplate);
         })
       );
 
-      const clientsToCreate = Object.fromEntries(
-        islands.map((d) => [
-          d.id + "-" + String(islandHashes[d.id]),
-          join(islandsDir, d.id + ".js"),
-        ])
-      );
+      const newIslandEntries = islands.reduce((acc, d) => {
+        acc[`${d.id}-${islandHashes[d.id]}`] = join(islandsDir, `${d.id}.js`);
+        return acc;
+      }, {})
 
-      Object.assign(islandEntries, clientsToCreate);
+      Object.assign(
+        islandEntries,
+        newIslandEntries
+      );
 
       return {
         code: serverCode,
