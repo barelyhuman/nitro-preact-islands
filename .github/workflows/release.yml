@@ -2,8 +2,8 @@ name: release
 
 on:
   push:
-    tags-ignore:
-      - '*-alpha.*'
+    tags:
+      - *
 
 jobs:
   publish:
