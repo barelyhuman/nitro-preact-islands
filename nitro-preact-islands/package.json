@@ -1,6 +1,6 @@
 {
   "name": "nitro-preact-islands",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "UnJS Nitro module to simplify preact islands",
   "type": "module",
   "types": "./dist/index.d.ts",
