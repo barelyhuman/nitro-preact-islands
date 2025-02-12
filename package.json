@@ -1,5 +1,28 @@
 {
   "type": "module",
   "name": "mono-root",
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@10.3.0",
+  "author": "reaper<ahoy@barelyhuman.dev>",
+  "scripts": {
+    "publish:ci": "lerna publish from-git --registry 'https://registry.npmjs.org' --yes",
+    "next": "lerna version",
+    "prepare": "husky"
+  },
+  "nano-staged": {
+    "*.{js,ts,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@barelyhuman/prettier-config": "^2.0.2",
+    "@lerna-lite/cli": "^3.12.0",
+    "@lerna-lite/publish": "^3.7.1",
+    "@lerna-lite/version": "^3.7.1",
+    "husky": "^9.1.7",
+    "lerna": "^8.1.9",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.5.0"
+  },
+  "prettier": "@barelyhuman/prettier-config"
 }
