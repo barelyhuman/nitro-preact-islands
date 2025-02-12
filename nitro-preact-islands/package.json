@@ -1,0 +1,37 @@
+{
+  "name": "nitro-preact-islands",
+  "version": "0.0.6",
+  "description": "UnJS Nitro module to simplify preact islands",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "next": "bumpp",
+    "build": "tsup src/index.ts --target=node18 --format=esm --dts",
+    "dev": "tsup src/index.ts --target=node18 --format=esm --dts --watch"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@dumbjs/preland": "dumbjs/preland",
+    "@dumbjs/quick-hash": "^0.0.7",
+    "defu": "^6.1.4",
+    "esbuild": "^0.25.0",
+    "tsup": "^8.3.6"
+  },
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "nitropack": ">=2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "bumpp": "^9.4.0",
+    "publint": "^0.3.4"
+  }
+}
