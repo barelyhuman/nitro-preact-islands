@@ -1,6 +1,6 @@
 # nitro-preact-islands
 
-> UnJS Nitro module to render preact islands
+> UnJS Nitro (https://nitro.build/) module to render preact islands 
 
 ## Usage
 
