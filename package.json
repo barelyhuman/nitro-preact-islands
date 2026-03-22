@@ -18,7 +18,7 @@
     "@barelyhuman/prettier-config": "^2.0.2",
     "@lerna-lite/cli": "^3.12.0",
     "@lerna-lite/publish": "^4.11.5",
-    "@lerna-lite/version": "^3.7.1",
+    "@lerna-lite/version": "^4.11.5",
     "husky": "^9.1.7",
     "lerna": "^9.0.7",
     "nano-staged": "^0.8.0",
