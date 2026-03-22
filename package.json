@@ -20,7 +20,7 @@
     "@lerna-lite/publish": "^4.11.5",
     "@lerna-lite/version": "^3.7.1",
     "husky": "^9.1.7",
-    "lerna": "^8.1.9",
+    "lerna": "^9.0.7",
     "nano-staged": "^0.8.0",
     "prettier": "^3.5.0"
   },
