@@ -68,10 +68,10 @@ importers:
     dependencies:
       preact:
         specifier: ^10.25.4
-        version: 10.25.4
+        version: 10.29.0
       preact-render-to-string:
         specifier: ^6.5.13
-        version: 6.6.6(preact@10.25.4)
+        version: 6.6.6(preact@10.29.0)
     devDependencies:
       nitro-preact-islands:
         specifier: workspace:*
@@ -4129,8 +4129,8 @@ packages:
     peerDependencies:
       preact: '>=10 || >= 11.0.0-0'
 
-  preact@10.25.4:
-    resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
+  preact@10.29.0:
+    resolution: {integrity: sha512-wSAGyk2bYR1c7t3SZ3jHcM6xy0lcBcDel6lODcs9ME6Th++Dx2KU+6D3HD8wMMKGA8Wpw7OMd3/4RGzYRpzwRg==}
 
   prettier@3.5.0:
     resolution: {integrity: sha512-quyMrVt6svPS7CjQ9gKb3GLEX/rl3BCL2oa/QkNcXv4YNVBC9olt3s+H7ukto06q7B1Qz46PbrKLO34PR6vXcA==}
@@ -9668,11 +9668,11 @@ snapshots:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  preact-render-to-string@6.6.6(preact@10.25.4):
+  preact-render-to-string@6.6.6(preact@10.29.0):
     dependencies:
-      preact: 10.25.4
+      preact: 10.29.0
 
-  preact@10.25.4: {}
+  preact@10.29.0: {}
 
   prettier@3.5.0: {}
 
