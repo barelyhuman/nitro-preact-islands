@@ -30,7 +30,7 @@
     "nitropack": ">=2"
   },
   "devDependencies": {
-    "@types/node": "^22.13.1",
+    "@types/node": "^25.5.0",
     "bumpp": "^11.0.1",
     "publint": "^0.3.4"
   }
